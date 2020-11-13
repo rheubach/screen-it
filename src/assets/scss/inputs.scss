@@ -1,0 +1,128 @@
+//FORMS
+.form {
+  box-sizing: border-box;
+  position: relative;
+  padding: $pad-lg;
+  border-bottom: $border;
+
+  &__input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: $pad;
+  }
+
+  &__rating {
+    position: relative;
+    width: auto;
+    display: flex;
+    margin-bottom: $pad;
+
+    .stars {
+      position: absolute;
+      margin: none;
+
+      label {
+        opacity: 0;
+      }
+
+      &__container {
+        position: relative;
+        width: 220px;
+        margin: 0 0 0 auto;
+
+      }
+
+      &:hover{
+
+        label {
+          cursor: pointer;
+          opacity: 1;
+          color: $color-9;
+        }
+      }
+
+      input[type=radio] {
+        position: absolute;
+        right: -999em;
+      }
+    }
+    &:not(:hover) input[type=radio]:checked + label {
+      opacity: 1;
+      color: $color-9;
+    }
+    .star__template {
+    }
+  }
+}
+
+//LABELS
+label {
+  margin-right: $pad-sm;
+}
+
+//INPUTS
+input[type=text], select {
+  box-sizing: border-box;
+  width: 300px;
+  margin-left: auto;
+  padding: $pad;
+  border: $border;
+  border-radius: $border-radius;
+  color: $color-4;
+  font-size: $font-size;
+  font-weight: 400;
+  -webkit-appearance: none;
+
+  @media (min-width: $screen-mobile) {
+    width: 400px;
+  }
+
+  &::placeholder {
+    color: $color-4;
+  }
+}
+
+input[type=text] {
+  color: $color-5;
+}
+
+.select {
+  &__container {
+    position: relative;
+    margin-left: auto;
+
+    &::after {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      content: '▼';
+      color: $color-4;
+      font-family: inherit;
+    }
+  }
+}
+
+//BUTTONS
+.btn {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: $pad 0;
+  border: 1px solid $color-7;
+  border-radius: $border-radius;
+  background: linear-gradient(180deg, $color-6 0%, $color-7 100%), #FFFFFF;
+  box-shadow: 0px 2px 4px rgba($color-6, 0.5), 0px 4px 8px rgba($color-6, 0.25);
+  color: $color-1;
+  font-size: $font-size;
+  text-align: center;
+  transition: all 0.5s ease-in;
+
+  &:hover {
+    background: linear-gradient(180deg, darken($color-6, 10%) 0%, darken($color-7, 10%) 100%), #FFFFFF;
+    box-shadow: 0px 2px 4px rgba($color-6, 1.0), 0px 4px 8px rgba($color-6, 0.45);
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+  }
+}

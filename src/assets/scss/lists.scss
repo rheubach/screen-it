@@ -1,0 +1,84 @@
+//LISTS
+.list {
+  box-sizing: border-box;
+
+  @media (min-width: $screen-desktop) {
+    padding: $pad-lg;
+    border-top: $border;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: $pad-md;
+    border-bottom: $border;
+  }
+
+  .movie {
+    &__initials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      min-width: 64px;
+      height: 64px;
+      margin-right: $pad;
+      border-radius: 50%;
+      background-color: $color-7;
+      color: $color-1;
+    }
+
+    &__title {
+      flex: 1;
+      width: auto;
+      margin: 0;
+      margin-right: $pad-sm;
+      text-align: left;
+
+      @media (min-width: $screen-mobile) {
+        max-width: 40%;
+      }
+      @media (min-width: $screen-tablet) {
+        max-width: 100%;
+      }
+
+      h2 {
+        margin-bottom: $pad-sm;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    &__rating {
+      flex: 1 1 100%;
+      width: 100%;
+      margin-top: $pad-sm;
+      margin-left: auto;
+      text-align: left;
+      white-space: nowrap;
+
+      @media (min-width: $screen-mobile) {
+        flex: 1;
+        margin-top: 0;
+        text-align: right;
+        max-width: 200px;
+      }
+    }
+  }
+}
+
+//RATING STARS
+.star {
+  fill: $color-4;
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+
+  &--filled {
+    @extend .star;
+    fill: $color-9;
+  }
+}
