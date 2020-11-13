@@ -19,9 +19,11 @@ class App extends React.Component{
     return (
       <div className="app__container">
         <div className="app__form">
+          {/* LIST HEADER */}
           <header className="header">
             <h1>Screen it</h1>
           </header>
+          {/* LIST FORM */}
           <form className="form" className="form">
             <div className="form__input">
               <label htmlFor="movieName">Name</label>
@@ -57,6 +59,7 @@ class App extends React.Component{
             </button>
           </form>
         </div>
+        {/* FORM RESULTS */}
         <ul className="list">
           {this.state.movie.map(function(movie) {
               return (
@@ -98,6 +101,7 @@ class App extends React.Component{
                 </li>
               );
           })}
+          {/* MOVIE LIST */}
           <MovieList />
         </ul>
       </div>

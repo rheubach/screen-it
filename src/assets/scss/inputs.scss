@@ -13,9 +13,9 @@
   }
 
   &__rating {
+    display: flex;
     position: relative;
     width: auto;
-    display: flex;
     margin-bottom: $pad;
 
     .stars {
@@ -36,9 +36,9 @@
       &:hover{
 
         label {
+          color: $color-9;
           cursor: pointer;
           opacity: 1;
-          color: $color-9;
         }
       }
 
@@ -48,8 +48,8 @@
       }
     }
     &:not(:hover) input[type=radio]:checked + label {
-      opacity: 1;
       color: $color-9;
+      opacity: 1;
     }
     .star__template {
     }
@@ -63,6 +63,7 @@ label {
 
 //INPUTS
 input[type=text], select {
+  -webkit-appearance: none;
   box-sizing: border-box;
   width: 300px;
   margin-left: auto;
@@ -72,7 +73,6 @@ input[type=text], select {
   color: $color-4;
   font-size: $font-size;
   font-weight: 400;
-  -webkit-appearance: none;
 
   @media (min-width: $screen-mobile) {
     width: 400px;
@@ -94,12 +94,12 @@ input[type=text] {
 
     &::after {
       position: absolute;
-      right: 40px;
       top: 50%;
+      right: 40px;
       transform: translateY(-50%);
-      content: '▼';
       color: $color-4;
       font-family: inherit;
+      content: '▼';
     }
   }
 }
